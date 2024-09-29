@@ -1,2 +1,1 @@
-Git is a version control system.
- Git is free software.552d.
+this repository is for pokomn’ gitlearning
