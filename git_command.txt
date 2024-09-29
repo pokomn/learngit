@@ -1,0 +1,45 @@
+mkdir dirname 创建一个名字为dirname的文件夹
+cd后git init，建立git仓库
+git add
+git commit  -m “  ”
+git status 查看当前仓库状态，显示哪些文件未被纳入哪些改变了没add，哪些改变了已经add还没commit
+git diff 文件名，查看这个文件的变化
+git reset --hard HEAD^^...., 几个^表示回退几个版本，回退过多用~n，n为回退版本数
+git log 查看曾经的版本
+HEAD位置也可填写commit id用于回到新版本，commit id 可以往上翻，若已清空，则用git reflog查看每一次命令
+
+$ git checkout -- readme.txt
+命令git checkout -- readme.txt意思就是，把readme.txt⽂文件在工作区的修改全部撤销，这
+⾥
+里有两种情况：
+一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库⼀一模⼀一
+样的状态；
+一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存
+区后的状态。
+总之，就是让这个文件回到最近⼀一次git commit或git add时的状态。
+
+git reset HEAD readme.txt，将readme.txt文件从暂存区stage退回工作区
+
+restore指令是2.23新加的
+git restore --stage readme.txt 将readme.txt文件从暂存区stage退回工作区
+git restore readme.txt 将readme.txt文件从工作区discard
+
+对于被rm了的文件，若要在此版本删除，可以git rm 文件名，此时不会产生一个新的版本。直到commit后该版本出来不会有被删除的文件。
+也可用add+commit将被删除的状态上传到该版本中，此时会产生一个新的没有该文件的版本。
+若要恢复，可以用git restore 文件名，也可以用git checkout -- 文件名。
+
+用 ssh-keygen -t rsa -C "youremail@example.com创建一个ssh密钥，将pub密钥给github，创建时输完指令后一直默认即可，会在ueser/ASUS下出现.ssh文件夹，内有私钥和公钥。
+
+在github上先创建一个空repository，命完名后用git remote add origin git@github.com：pokomn/{repository名}.git将本地仓库和远程仓库连接
+第一次推送用git push -u origin master,加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
+之后的提交只需要git push origin master
+
+git branch 查看当前分支，git branch <分支名>创建新分支.
+git checkout -b <分支名>，创建并跳转到新分支
+git checkout <分支名>，跳转到那个分支
+文心一言推荐用2.23版本后新指令switch，git switch -c <文件名>,git switch <文件名>,-c代表新分支
+
+合并分支先跳转到一个分支，用git merge <新分支>,把新分支的内容和并到当前分支。
+
+git branch -d <分支名>，删除这个分支，-d表示会检查该分支有没有被合并，-D表示强制删除。删除的分支不能是当前所在分支。
+
