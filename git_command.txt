@@ -48,3 +48,8 @@ git branch -d <分支名>，删除这个分支，-d表示会检查该分支有�
 
 可用git --graph 查看分支变化图。
 
+bug分支若有需要再看，有git stash等命令
+
+git clone git@github.com:pokomn/learngit.git,默认克隆下来的是master分支
+若要得到另外的分支可以用 git switch -c dev origin/dev，
+前面那个dev可以是别的名字，但后面origin/dev中的一定是需要的分支名。
