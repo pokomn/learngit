@@ -53,9 +53,14 @@ bug分支若有需要再看，有git stash等命令
 git clone git@github.com:pokomn/learngit.git,默认克隆下来的是master分支
 若要得到另外的分支可以用 git switch -c dev origin/dev，
 前面那个dev可以是别的名字，但后面origin/dev中的一定是需要的分支名。
-若两人同时提交了对文件的修改，后者需要先把前者push上去的repository
-git pull下来，然后进行分支合并，再提交。
+
+
+/*若两人同时提交了对文件的修改，后者需要先把前者push上去的repository
+git pull下来，然后进行分支合并，再提交。若无冲突会直接pull下来并合并。
 git branch --set-upstream-to dev origin/dev，先将本地dev和远程dev连接，
-再用git pull，处理冲突的文件，解决完后再add，commit，push。
+再用git pull，处理冲突的文件，解决完后再add，commit，push。*/
+
+上述是老方案，若有冲突，直接git pull origin main，试图合并当前分支和
+被修改的分支，若失败会留下痕迹，用git status 查看并修改。
 
 git pull origin main，将origin中的main分支拉到当前分支。
