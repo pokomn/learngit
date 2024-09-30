@@ -1,3 +1,7 @@
 this is a file created in github.com
 a change in github
+<<<<<<< HEAD
 no change
+=======
+another change
+>>>>>>> 72ce3f27c1444c6225b06d275d3404a9ce2edfb1
