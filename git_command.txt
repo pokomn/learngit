@@ -55,3 +55,4 @@ git clone git@github.com:pokomn/learngit.git,默认克隆下来的是master分�
 前面那个dev可以是别的名字，但后面origin/dev中的一定是需要的分支名。
 若两人同时提交了对文件的修改，后者需要先把前者push上去的repository
 git pull下来，然后进行分支合并，再提交。
+git pull origin main，将origin中的main分支拉到当前分支。
