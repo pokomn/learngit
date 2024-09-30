@@ -62,5 +62,19 @@ git branch --set-upstream-to dev origin/dev，先将本地dev和远程dev连接�
 
 上述是老方案，若有冲突，直接git pull origin main，试图合并当前分支和
 被修改的分支，若失败会留下痕迹，用git status 查看并修改。
+由于git是基于修改来判断的，若我将远程仓库中一条信息github删除hub留下git
+本地文件的这条信息全删了，在push的过程中也会报错，显示冲突。
 
 git pull origin main，将origin中的main分支拉到当前分支。
+
+git tag 查看目前所有的标签。
+git tag <标签名>,给当前分支打一个标签。此时标签是给该分支最新的commit的
+可用 git tag <标签名> commit_id 给那个id打标签。
+git show <tagname>,显示这个标签的信息。
+还可以创建带有说明的标签，用-a指定标签名，-m指定说明文字
+-s替换-a可以做到用PGP签名,但得现有gpg。
+
+git tag -d <tagname> ,删除标签。
+git push origin <tagname>,推送标签。
+<tagname>换成--tags，推送所有标签
+远程删除标签要先本地删除，再用git push origin :refs/tags/<tagname>
